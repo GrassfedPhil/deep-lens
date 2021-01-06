@@ -1,0 +1,2 @@
+trial_id,title,description,phase,condition,anatomic_site,diagnoses,age_requirement
+trialId,"Title","Description",3,condition,site,1|2,>18
