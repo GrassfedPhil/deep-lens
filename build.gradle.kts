@@ -31,7 +31,7 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.assertj:assertj-core:3.18.1")
-
+    testImplementation("com.github.stefanbirkner:system-lambda:1.1.1")
 }
 
 tasks.withType<KotlinCompile> {
