@@ -1,5 +1,6 @@
 package com.phil.deeplens.service
 
+import com.phil.deeplens.config.Config
 import com.phil.deeplens.model.ClinicalTrial
 import com.phil.deeplens.model.Patient
 import org.assertj.core.api.Assertions.assertThat
@@ -7,11 +8,14 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.context.annotation.Import
 import org.springframework.core.io.ResourceLoader
 import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
-@SpringBootTest
+@SpringBootTest(classes = [CSVParser::class])
+@Import(Config::class)
+
 internal class CSVParserTest {
     @Autowired
     lateinit var resourceLoader: ResourceLoader

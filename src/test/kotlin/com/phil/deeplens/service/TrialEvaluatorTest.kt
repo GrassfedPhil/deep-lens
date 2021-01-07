@@ -12,7 +12,7 @@ import com.github.stefanbirkner.systemlambda.SystemLambda.*
 
 
 @ExtendWith(SpringExtension::class)
-@SpringBootTest
+@SpringBootTest(classes = [TrialEvaluator::class])
 internal class TrialEvaluatorTest {
     @Autowired
     lateinit var trialEvaluator: TrialEvaluator
