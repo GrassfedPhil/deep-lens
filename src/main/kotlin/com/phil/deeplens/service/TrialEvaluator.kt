@@ -18,7 +18,7 @@ class TrialEvaluator {
 
     private fun evaluatePatientForTrial(trial: ClinicalTrial, patient: Patient): Patient? {
         println("Processing patient ${patient.patientId}, age ${patient.age}, gender ${patient.gender}, with diagnosis ${patient.diagnosis}, for trial ${trial.trialId}")
-        if (checkAgeRequirement(trial.ageRequirement, patient.age)
+        if (patient.age?.let { checkAgeRequirement(trial.ageRequirement, it) } != false
             && checkDiagnosis(trial.diagnoses, patient.diagnosis)
             && checkAnatomicSite(trial.anatomicSite, patient.anatomicSite)
         ) {

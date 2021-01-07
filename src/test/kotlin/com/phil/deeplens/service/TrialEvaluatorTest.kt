@@ -103,6 +103,16 @@ internal class TrialEvaluatorTest {
         assertThat(completedRun).hasSize(1)
         assertThat(completedRun[0].first).isEqualTo(trial1)
         assertThat(completedRun[0].second).containsExactlyInAnyOrder(patient1, patient4)
+    }
+
+    @Test
+    fun `evaluate will not reject a patient if their age is not provided`(){
+        val blankAge = patient1.copy(age = null)
+
+        val evaluated = trialEvaluator.evaluate(listOf(trial1), listOf(blankAge))
+        assertThat(evaluated).hasSize(1)
+        assertThat(evaluated[0].first).isEqualTo(trial1)
+        assertThat(evaluated[0].second).containsExactly(blankAge)
 
     }
 }
